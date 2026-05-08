@@ -2,64 +2,48 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Ad Gate</title>
+<title>Ads Site</title>
 
-<!-- СЮДА ВСТАВЬ СКРИПТ MONETAG -->
-<script src="<script src="https://pl29371105.profitablecpmratenetwork.com/28/20/1a/28201ae612b781ea4afec5d2eecb6bf3.js"></script>
-"></script>
+<!-- РЕКЛАМА -->
+<script src="https://pl29371105.profitablecpmratenetwork.com/28/20/1a/28201ae612b781ea4afec5d2eecb6bf3.js"></script>
 
 <style>
 body{
-  background:#111;
-  color:white;
-  font-family:Arial;
-  text-align:center;
-  padding-top:100px;
+    background:#111;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+    padding-top:100px;
 }
 
 button{
-  padding:15px 25px;
-  font-size:18px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  margin-top:20px;
-}
-
-#continueBtn{
-  display:none;
-  background:green;
-  color:white;
+    padding:15px 25px;
+    font-size:20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Смотреть рекламу</h1>
+<h1>Добро пожаловать</h1>
 
-<button onclick="startAd()">▶ Смотреть рекламу</button>
-
-<button id="continueBtn" onclick="finish()">
-  Продолжить
+<button onclick="startAd()">
+Смотреть рекламу
 </button>
 
 <script>
+function startAd(){
 
-function startAd() {
-  alert("Реклама запущена");
+    // Клик нужен для запуска рекламы
+    window.open(
+      "https://google.com",
+      "_blank"
+    );
 
-  // тут запускается рекламный скрипт Monetag
-
-  setTimeout(() => {
-    document.getElementById("continueBtn").style.display = "inline-block";
-  }, 8000); // 8 секунд ожидания
 }
-
-function finish(){
-  document.body.innerHTML = "<h1>Спасибо за просмотр рекламы 👍</h1>";
-}
-
 </script>
 
 </body>
