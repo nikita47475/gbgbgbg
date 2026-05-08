@@ -1,50 +1,53 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<title>Ads Site</title>
+<div id="ad-wrapper" style="text-align:center; font-family:Arial;">
 
-<!-- РЕКЛАМА -->
-<script src="https://pl29371105.profitablecpmratenetwork.com/28/20/1a/28201ae612b781ea4afec5d2eecb6bf3.js"></script>
-    
-<style>
-body{
-    background:#111;
+  <!-- 🚫 СООБЩЕНИЕ -->
+  <div id="adblock-message" style="
+    display:block;
+    background:#ff3b3b;
     color:white;
-    font-family:Arial;
-    text-align:center;
-    padding-top:100px;
-}
+    padding:12px;
+    font-size:14px;
+    margin-bottom:10px;
+  ">
+    ⚠️ Пожалуйста, отключите блокировщик рекламы 🙏
+  </div>
 
-button{
-    padding:15px 25px;
-    font-size:20px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-}
-</style>
-</head>
+  <!-- 📢 РЕКЛАМА -->
+  <div id="ad-slot">
+    <script>
+      atOptions = {
+        'key' : '53d77db09bbc1a4e8dc18ee69f3dbcd8',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script src="https://lentspeaking.com/53d77db09bbc1a4e8dc18ee69f3dbcd8/invoke.js"></script>
+  </div>
 
-<body>
+  <!-- 🟢 СТИКЕР -->
+  <div style="margin-top:10px; font-size:12px; color:gray;">
+    ⭐ Реклама помогает поддерживать сайт
+  </div>
 
-<h1>Добро пожаловать</h1>
-
-<button onclick="startAd()">
-Смотреть рекламу
-</button>
+</div>
 
 <script>
-function startAd(){
+function checkAd() {
+    const ad = document.getElementById("ad-slot");
+    const msg = document.getElementById("adblock-message");
 
-    // Клик нужен для запуска рекламы
-    window.open(
-      "https://google.com",
-      "_blank"
-    );
-
+    // если внутри есть iframe или контент → реклама есть
+    if (ad && ad.querySelector("iframe")) {
+        msg.style.display = "none";
+    } else {
+        msg.style.display = "block";
+    }
 }
-</script>
 
-</body>
-</html>
+// проверяем несколько раз (важно!)
+setTimeout(checkAd, 1000);
+setTimeout(checkAd, 3000);
+setTimeout(checkAd, 5000);
+</script>
